@@ -23,8 +23,8 @@ jobs:
         git checkout -b "$BRANCH"
         # Copy build artifacts from current workspace into the target repo folder
         cp -R ../docs/* ./easy-code-formatter/documents/
-        cp -R ../docs/images/* ./easy-code-formatter/images/
-        cp -R ../docs/icons/* ./easy-code-formatter/icons/
+        cp -R ../images/* ./easy-code-formatter/images/
+        cp -R ../icons/* ./easy-code-formatter/icons/
         git add .
         # Check if there are staged changes
         if git diff --staged --quiet; then
