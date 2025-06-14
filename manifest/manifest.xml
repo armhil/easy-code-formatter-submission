@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
 	<Id>3395c997-ff93-4b86-9979-96eff1c74fdb</Id>
-	<Version>1.1.0.2</Version>
+	<Version>1.1.0.3</Version>
 	<ProviderName>Arman Hilmioglu</ProviderName>
 	<DefaultLocale>en-US</DefaultLocale>
 	<DisplayName DefaultValue="Easy Code Formatter" />
@@ -119,6 +119,23 @@
 					<Label resid="Codify.TabLabel" />
 					</CustomTab>
 				</ExtensionPoint>
+        <!--Adding context menu extension-->
+        <ExtensionPoint xsi:type="ContextMenu">
+          <OfficeMenu id="ContextMenuText">
+              <Control xsi:type="Button" id="CodifyButton">
+                  <Label resid="Codify.FormatFunction.Label" />
+                  <Tooltip resid="Codify.FormatFunction.Label" />
+                  <Icon>
+                      <bt:Image size="16" resid="Codify.TaskpaneButton.Icon16" />
+                      <bt:Image size="32" resid="Codify.TaskpaneButton.Icon32" />
+                      <bt:Image size="80" resid="Codify.TaskpaneButton.Icon80" />
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                      <FunctionName>AddinFunctions.CodifyText</FunctionName>
+                  </Action>
+              </Control>
+          </OfficeMenu>
+        </ExtensionPoint>
 				</DesktopFormFactor>
 			</Host>
 		</Hosts>
